@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Strand | My Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="user-dashboard">
+    <header class="site-header">
+        <a class="brand" href="index.html">Luxe Strand</a>
+        <div class="nav-wrap">
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Service</a>
+                <a class="active" href="user-dashboard.html">My Dashboard</a>
+                <a href="appointment.html">Book Appointment</a>
+                <a href="#" id="logoutLink">Logout</a>
+            </nav>
+            <button class="menu-button" aria-label="Menu"><span></span></button>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="dashboard">
+            <h1>My Appointments</h1>
+            <p class="customer-dashboard-intro">View your appointment requests or book another visit.</p>
+            <p class="customer-dashboard-intro">To confirm an appointment or ask about its status, please message the salon admin directly.</p>
+
+            <div class="stats">
+                <div class="stat"><span>Your appointments</span><strong id="totalAppointments">0</strong></div>
+                <div class="stat"><span>Pending</span><strong id="pendingAppointments">0</strong></div>
+                <div class="stat customer-dashboard-action">
+                    <a class="hero-cta" href="appointment.html">Book an Appointment</a>
+                </div>
+            </div>
+
+            <div class="appointment-box">
+                <h2>Appointment history</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Phone</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentRows"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="client.js"></script>
+</body>
+</html>

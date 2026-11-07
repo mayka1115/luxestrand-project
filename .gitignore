@@ -1,0 +1,17 @@
+.venv/
+node_modules/
+__pycache__/
+*.py[cod]
+
+.idea/
+.vscode/
+
+.env
+.env.*
+!.env.example
+
+luxe_strand.db
+luxe_strand.db-*
+*.sqlite
+*.sqlite3
+npm-debug.log*

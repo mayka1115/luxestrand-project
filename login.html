@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Strand | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+    <header class="site-header">
+        <a class="brand" href="index.html">Luxe Strand</a>
+        <div class="nav-wrap">
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Service</a>
+                <a class="active" href="login.html">Login</a>
+            </nav>
+            <button class="menu-button" aria-label="Menu"><span></span></button>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="login-page">
+            <form class="login-card" id="loginForm">
+                <h1>Login</h1>
+                <p id="loginMessage" class="login-message" role="status" aria-live="polite"></p>
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" autocomplete="username" required>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+                <button type="submit">Log in</button>
+                <a href="#" id="showRegister">Create account</a>
+            </form>
+
+            <form class="login-card" id="registerForm" hidden>
+                <h1>Create account</h1>
+                <p id="registerMessage" class="login-message" role="status" aria-live="polite"></p>
+                <label for="registerUsername">Username</label>
+                <input id="registerUsername" name="username" type="text" autocomplete="username" minlength="3" maxlength="32" pattern="[A-Za-z0-9_.\-]+" required>
+                <label for="registerPassword">Password (12 characters minimum)</label>
+                <input id="registerPassword" name="password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+                <button type="submit">Create account</button>
+                <a href="#" id="showLogin">Already have an account? Log in</a>
+            </form>
+        </section>
+    </main>
+
+    <script src="client.js"></script>
+</body>
+</html>

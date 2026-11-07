@@ -1,0 +1,668 @@
+:root{--black:#050505;--taupe:#665a52;--taupe2:#7a6d64;--white:#fff;--text:#eee9e5;--nav:114px}
+*{box-sizing:border-box}
+    
+html,body{
+    margin:0;
+    min-height:100%;
+    font-family:Poppins,"Segoe UI",Arial,sans-serif;
+    background:#050505;
+    color:#fff}
+    
+a{
+    text-decoration:none;
+    color:inherit}
+    
+button,input,select{
+    font:inherit}
+
+.site-header{
+    height:var(--nav);
+    position:fixed;
+    inset:0 0 auto 0;
+    z-index:50;
+    background:#050505;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 3.5vw}
+    
+.brand{
+    font-weight:700;
+    color:#9b8d84;
+    font-size:17px}
+
+.nav-wrap{
+    display:flex;
+    align-items:center;
+    gap:18px}
+    
+.main-nav{
+    display:flex;
+    align-items:center;
+    gap:12px}
+    
+.main-nav a{
+    padding:17px 22px;
+    border-radius:35px;
+    font-size:15px}
+    
+.main-nav a:hover,
+
+.main-nav a.active{
+    background:#5e534b;
+    font-weight:700}
+
+.menu-button{
+    width:50px;
+    height:50px;
+    background:none;
+    border:0;
+    cursor:pointer;
+    display:grid;
+    place-items:center}
+    
+.menu-button span,
+
+.menu-button:before,
+
+.menu-button:after{
+    content:"";
+    width:38px;
+    height:3px;
+    background:#aa998f;
+    display:block}
+    
+.menu-button:before{
+    transform:translateY(9px)}
+    
+.menu-button:after{
+    transform:translateY(-9px)}
+
+.page{
+    padding-top:var(--nav);
+    min-height:100vh}
+
+.hero{
+    min-height:calc(100vh - var(--nav));
+    background-image:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url("images/home-bg.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center}
+    
+.hero-content{
+    padding:70px 24px;
+    max-width:1100px}
+    
+.hero h1{font-size:clamp(70px,8vw,132px);
+    line-height:.95;
+    margin:0 0 70px;
+    font-weight:800;
+    letter-spacing:-5px}
+    
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:16px;
+    line-height:1.45}
+
+.services-page{
+    min-height:calc(100vh - var(--nav));
+    padding:70px 8vw;
+    background:linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.58)),url("images/service-bg.jpg") center/cover no-repeat}
+    
+.services-title{
+    text-align:center;
+    font-size:clamp(48px,5vw,70px);
+    margin:0 0 60px}
+    
+.service-grid{
+    max-width:1250px;
+    margin:auto;display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:160px;row-gap:52px}
+    
+.service-grid h2{
+    font-size:19px;
+    margin:0 0 16px}
+
+.service-grid p{
+    font-size:15px;
+    line-height:1.45;
+    margin:0;max-width:500px}
+
+.service-book-button{
+    display:inline-block;
+    align-self:flex-start;
+    margin-top:18px;
+    padding:10px 18px;
+    border:1px solid #aa998f;
+    border-radius:24px;
+    color:#fff;
+    font-size:14px;
+    font-weight:700}
+
+.service-book-button:hover{
+    background:#786c63}
+
+.login-page{
+    min-height:calc(100vh - var(--nav));
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding:60px 7vw;
+    overflow-y:auto;
+    background:linear-gradient(90deg,rgba(0,0,0,.1),rgba(0,0,0,.1)),url("images/login-bg.jpg") center/cover no-repeat}
+    
+.login-card{
+    width:min(430px,100%);
+    background:#786c63;
+    border-radius:22px;
+    padding:38px clamp(24px,6vw,44px);
+    display:flex;flex-direction:column;
+    justify-content:center}
+
+.login-card[hidden]{display:none}
+
+.login-card a{
+    color:#fff;
+    text-align:center;
+    margin-top:18px}
+
+.login-card h1{
+    text-align:center;
+    font-size:clamp(40px,4.2vw,52px);
+    margin:0 0 24px}
+    
+.login-card label{
+    font-size:15px;
+    margin:10px 0 4px}
+    
+.login-card input{
+    background:transparent;
+    border:0;
+    border-bottom:2px solid rgba(255,255,255,.55);
+    outline:0;color:#fff;
+    padding:8px 0}
+    
+.login-card button{
+    margin:22px auto 0;
+    border:0;
+    background:transparent;
+    color:#fff;
+    border-radius:6px;
+    padding:12px 32px;
+    font-weight:800;
+    cursor:pointer;
+    transition:background-color .2s ease,color .2s ease,transform .2s ease}
+
+.login-card button:hover{
+    background:rgba(94,83,75,.9);
+    color:#fff}
+
+.login-card button:active{
+    transform:scale(.97)}
+
+.login-card button:focus-visible{
+    outline:3px solid #fff;
+    outline-offset:3px}
+    
+.login-message{
+    text-align:center;
+    min-height:22px;
+    color:#fff}
+
+.demo-note{
+    text-align:center;
+    font-size:12px;
+    opacity:.75;
+    margin-top:20px}
+
+.dashboard{
+    min-height:calc(100vh - var(--nav));
+    padding:60px 6vw;
+    background:#121212}
+    
+.dashboard h1{
+    font-size:55px;
+    margin:0 0 35px}
+
+.customer-dashboard-intro{color:#c8c0ba}
+
+.customer-dashboard-action{
+    display:flex;
+    align-items:center;
+    justify-content:center}
+
+.customer-dashboard-action .hero-cta{margin:0}
+    
+.stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:20px;margin-bottom:30px}
+    
+.stat,.appointment-box{
+    background:#252321;
+    border-radius:22px;
+    padding:25px}
+    
+.stat span{
+    color:#c8c0ba}
+    
+.stat strong{
+    display:block;
+    font-size:45px;
+    margin-top:8px}
+    
+.appointment-box h2{
+    margin-top:0}
+    
+.appointment-box form{
+    display:grid;
+    grid-template-columns:1.1fr 1.3fr 1fr 1fr auto;
+    gap:10px;
+    margin-bottom:25px}
+    
+.appointment-box input,.appointment-box select{
+    background:#121212;color:#fff;
+    border:1px solid #49443f;
+    border-radius:9px;
+    padding:12px}
+
+.appointment-box .appointment-status{
+    min-width:120px;
+    background:#121212;
+    color:#fff;
+    border:1px solid #625a53;
+    border-radius:7px;
+    padding:8px;
+    cursor:pointer}
+
+.appointment-box .appointment-remove{
+    margin-left:8px;
+    padding:8px 10px;
+    border:1px solid #8e5c55;
+    border-radius:7px;
+    background:transparent;
+    color:#f0c4bd;
+    cursor:pointer}
+
+.appointment-box .appointment-remove:hover{
+    background:#8e5c55;
+    color:#fff}
+
+.appointment-box .appointment-remove:disabled{
+    cursor:wait;
+    opacity:.6}
+    
+.appointment-box button{
+    border:0;
+    border-radius:9px;
+    padding:12px 18px;
+    font-weight:700;
+    cursor:pointer}
+    
+.table-wrap{
+    overflow-x:auto}
+    
+table{
+    width:100%;
+    border-collapse:collapse}th,
+    
+td{
+    text-align:left;
+    padding:14px;
+    border-bottom:1px solid #3a3734}
+    
+th{
+    color:#c9bdb4}
+    
+.empty{color:#bbb}
+
+.hero-cta{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    border-radius:30px;
+    background:#786c63;
+    font-weight:700}
+
+.hero-cta:hover{background:#9b8d84}
+
+.service-cta{
+    display:table;
+    margin:55px auto 0}
+
+.booking-page{
+    min-height:calc(100vh - var(--nav));
+    padding:55px 20px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),url("images/service-bg.jpg") center/cover no-repeat}
+
+.booking-card{
+    width:min(650px,100%);
+    padding:42px;
+    border:1px solid #49443f;
+    border-radius:22px;
+    background:rgba(25,24,23,.96)}
+
+.booking-card h1{
+    margin:0 0 8px;
+    font-size:clamp(34px,5vw,52px)}
+
+.booking-card>p{
+    color:#c8c0ba}
+
+.booking-card form{
+    display:grid;
+    gap:10px;
+    margin-top:28px}
+
+.booking-card label{
+    margin-top:5px;
+    color:#eee9e5}
+
+.booking-card input,.booking-card select{
+    width:100%;
+    min-height:46px;
+    padding:11px 12px;
+    border:1px solid #625a53;
+    border-radius:9px;
+    background:#121212;
+    color:#fff}
+
+.booking-datetime{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px}
+
+.booking-datetime>div{
+    display:grid;
+    gap:10px}
+
+.booking-card button{
+    margin-top:12px;
+    padding:14px;
+    border:0;
+    border-radius:9px;
+    background:#9b8d84;
+    color:#fff;
+    font-weight:700;
+    cursor:pointer}
+
+.booking-card button:hover{background:#786c63}
+
+.form-message{
+    min-height:1.5em;
+    margin:5px 0 0;
+    color:#e9c7a5}
+
+.booking-note{
+    margin-bottom:0;
+    font-size:13px;
+    line-height:1.5}
+
+@media(max-width:900px){
+    .login-page{justify-content:flex-end;padding:32px 20px}
+    .login-card{padding:32px 26px}
+    .site-header{padding:0 20px}
+    .service-grid{grid-template-columns:1fr;gap:40px}
+    .services-page{padding:55px 8vw}
+    .stats{grid-template-columns:1fr}
+    .appointment-box form{grid-template-columns:1fr}
+    .dashboard h1{font-size:44px}
+}
+
+@media(max-width:480px){
+    .login-page{justify-content:flex-end;padding:24px 16px}
+    .login-card{border-radius:16px}
+    .login-card h1{font-size:38px}
+}
+
+@media(max-width:900px){
+    .main-nav{
+        position:fixed;
+        top:var(--nav);
+        left:0;
+        right:0;
+        z-index:49;
+        display:none;
+        flex-direction:column;
+        padding:18px;
+        background:#050505}
+
+    .main-nav.show{display:flex}
+}
+
+@media(min-width:901px){
+    .menu-button{display:none}
+}
+
+@media(max-width:900px){
+    :root{--nav:86px}
+}
+
+@media(max-width:600px){
+    :root{--nav:68px}
+
+    .site-header{
+        padding:0 16px}
+
+    .brand{
+        font-size:16px}
+
+    .nav-wrap{
+        gap:0}
+
+    .menu-button{
+        position:relative;
+        width:44px;
+        height:44px;
+        padding:0}
+
+    .menu-button span,
+    .menu-button:before,
+    .menu-button:after{
+        position:absolute;
+        left:9px;
+        width:26px;
+        height:2px;
+        transform:none;
+        transition:transform .2s ease,opacity .2s ease}
+
+    .menu-button:before{top:14px}
+    .menu-button span{top:21px}
+    .menu-button:after{top:28px}
+
+    .menu-button[aria-expanded="true"]:before{
+        top:21px;
+        transform:rotate(45deg)}
+
+    .menu-button[aria-expanded="true"] span{opacity:0}
+
+    .menu-button[aria-expanded="true"]:after{
+        top:21px;
+        transform:rotate(-45deg)}
+
+    .menu-button:focus-visible{
+        outline:2px solid #aa998f;
+        outline-offset:2px}
+
+    .main-nav{
+        top:var(--nav);
+        gap:4px;
+        padding:12px 16px 18px;
+        box-shadow:0 12px 20px rgba(0,0,0,.35)}
+
+    .main-nav a{
+        padding:14px 16px;
+        font-size:16px}
+
+    .hero{
+        min-height:calc(100svh - var(--nav))}
+
+    .hero-content{
+        padding:48px 20px}
+
+    .hero h1{
+        font-size:clamp(48px,15vw,76px);
+        letter-spacing:-3px;
+        margin-bottom:24px}
+
+    .hero p{
+        font-size:15px;
+        line-height:1.6}
+
+    .hero-cta{
+        margin-top:24px;
+        padding:13px 20px}
+
+    .services-page{
+        padding:38px 20px 48px}
+
+    .services-title{
+        font-size:42px;
+        margin-bottom:36px}
+
+    .service-grid{
+        gap:32px}
+
+    .service-grid h2{
+        font-size:18px;
+        margin-bottom:10px}
+
+    .service-grid p{
+        font-size:14px;
+        line-height:1.6}
+
+    .service-cta{
+        margin-top:38px}
+
+    .login-page{
+        min-height:calc(100svh - var(--nav));
+        justify-content:center;
+        padding:28px 16px;
+        background-position:60% center}
+
+    .login-card{
+        padding:30px 24px;
+        border-radius:16px}
+
+    .login-card h1{
+        font-size:38px}
+
+    .login-card input{
+        min-height:42px;
+        font-size:16px}
+
+    .booking-page{
+        min-height:calc(100svh - var(--nav));
+        padding:24px 14px;
+        place-items:start center}
+
+    .booking-card{
+        padding:26px 20px;
+        border-radius:16px}
+
+    .booking-card h1{
+        font-size:34px}
+
+    .booking-card form{
+        gap:8px;
+        margin-top:22px}
+
+    .booking-card input,
+    .booking-card select{
+        min-height:48px;
+        font-size:16px}
+
+    .booking-datetime{
+        grid-template-columns:1fr;
+        gap:8px}
+
+    .booking-card button{
+        min-height:48px}
+
+    .dashboard{
+        padding:34px 14px 40px}
+
+    .dashboard h1{
+        font-size:34px;
+        line-height:1.15;
+        margin-bottom:24px}
+
+    .customer-dashboard-intro{
+        line-height:1.55}
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+        margin-bottom:18px}
+
+    .stat,
+    .appointment-box{
+        padding:18px;
+        border-radius:16px}
+
+    .stat span{
+        font-size:13px}
+
+    .stat strong{
+        font-size:34px}
+
+    .customer-dashboard-action{
+        grid-column:1 / -1}
+
+    .customer-dashboard-action .hero-cta{
+        width:100%;
+        text-align:center}
+
+    .appointment-box h2{
+        font-size:20px;
+        line-height:1.3}
+
+    .appointment-box form{
+        grid-template-columns:1fr;
+        gap:10px}
+
+    .appointment-box input,
+    .appointment-box select,
+    .appointment-box button{
+        width:100%;
+        min-height:46px;
+        font-size:16px}
+
+    .table-wrap{
+        margin:0 -8px;
+        padding:0 8px;
+        -webkit-overflow-scrolling:touch}
+
+    table{
+        min-width:650px}
+
+    th,
+    td{
+        padding:12px 10px;
+        white-space:nowrap;
+        font-size:14px}
+
+    .appointment-box .appointment-status{
+        min-height:40px;
+        font-size:14px}
+
+    .appointment-box .appointment-remove{
+        min-height:40px;
+        width:auto;
+        margin-left:6px;
+        padding:8px}
+}
+
+@media(max-width:360px){
+    .site-header{padding:0 12px}
+    .dashboard{padding-right:10px;padding-left:10px}
+    .stats{grid-template-columns:1fr}
+    .customer-dashboard-action{grid-column:auto}
+    .booking-card{padding:24px 16px}
+}

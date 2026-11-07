@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Strand | Book an Appointment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="appointment">
+    <header class="site-header">
+        <a class="brand" href="index.html">Luxe Strand</a>
+        <div class="nav-wrap">
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a class="active" href="services.html">Service</a>
+                <a href="login.html">Login</a>
+            </nav>
+            <button class="menu-button" aria-label="Menu"><span></span></button>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="booking-page">
+            <div class="booking-card">
+                <h1>Book an Appointment</h1>
+                <p>Choose a service and a time that works for you.</p>
+
+                <form id="bookingForm">
+                    <label for="bookingName">Username</label>
+                    <input id="bookingName" name="name" type="text" autocomplete="username" pattern="[A-Za-z0-9_.\-]{3,32}" title="Use a username without spaces or last names." required maxlength="32">
+
+                    <label for="bookingPhone">Philippine mobile number</label>
+                    <input id="bookingPhone" name="phone" type="tel" autocomplete="tel" placeholder="09XX XXX XXXX" required maxlength="18">
+
+                    <label for="bookingService">Service</label>
+                    <select id="bookingService" name="service" required>
+                        <option value="">Select a service</option>
+                        <option>Haircut &amp; Styling</option>
+                        <option>Hair Color</option>
+                        <option>Hair Treatment</option>
+                        <option>Hair Rebonding &amp; Smoothing</option>
+                        <option>Manicure &amp; Pedicure</option>
+                        <option>Beauty &amp; Styling</option>
+                    </select>
+
+                    <div class="booking-datetime">
+                        <div>
+                            <label for="bookingDate">Date</label>
+                            <input id="bookingDate" name="date" type="date" required>
+                        </div>
+                        <div>
+                            <label for="bookingTime">Time</label>
+                            <input id="bookingTime" name="time" type="time" required>
+                        </div>
+                    </div>
+
+                    <button type="submit">Request Appointment</button>
+                    <p id="bookingMessage" class="form-message" role="status" aria-live="polite"></p>
+                </form>
+
+                <p class="booking-note">Your appointment request is pending salon confirmation. To confirm your appointment or ask about its status, please message the salon admin directly.</p>
+                <p class="booking-note">Sign in or create an account to see your appointments in your customer dashboard.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="client.js"></script>
+</body>
+</html>

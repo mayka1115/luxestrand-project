@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Strand | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+    <header class="site-header">
+        <a class="brand" href="index.html">Luxe Strand</a>
+        <div class="nav-wrap">
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Service</a>
+                <a class="active" href="dashboard.html">Dashboard</a>
+                <a href="#" id="logoutLink">Logout</a>
+            </nav>
+            <button class="menu-button" aria-label="Menu"><span></span></button>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="dashboard">
+            <h1>Admin Dashboard</h1>
+
+            <div class="stats">
+                <div class="stat"><span>Total appointments</span><strong id="totalAppointments">0</strong></div>
+                <div class="stat"><span>Services</span><strong>6</strong></div>
+                <div class="stat"><span>Pending</span><strong id="pendingAppointments">0</strong></div>
+            </div>
+
+            <div class="appointment-box">
+                <h2>Appointment Management</h2>
+
+                <form id="appointmentForm">
+                    <input id="customer" placeholder="Customer username" pattern="[A-Za-z0-9_.\-]{3,32}" title="Use a username without spaces or last names." required>
+                    <select id="service" required>
+                        <option value="">Select service</option>
+                        <option>Haircut &amp; Styling</option>
+                        <option>Hair Color</option>
+                        <option>Hair Treatment</option>
+                        <option>Hair Rebonding &amp; Smoothing</option>
+                        <option>Manicure &amp; Pedicure</option>
+                        <option>Beauty &amp; Styling</option>
+                    </select>
+                    <input id="appointmentDate" type="date" aria-label="Appointment date" required>
+                    <input id="appointmentTime" type="time" required>
+                    <button type="submit">Add Appointment</button>
+                </form>
+
+                <p id="adminAppointmentMessage" class="form-message" role="status" aria-live="polite"></p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Phone</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentRows"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="client.js"></script>
+</body>
+</html>
